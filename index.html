@@ -68,9 +68,7 @@
                 <a href="tel:9334627416" class="hidden md:flex items-center gap-2 text-sm font-semibold">
                     <i data-lucide="phone" class="w-4 h-4"></i> 9334627416
                 </a>
-                <div class="relative cursor-pointer group" onclick="toggleCart()">
-                    <i data-lucide="shopping-cart" class="w-6 h-6"></i>
-                    <span id="cart-count" class="absolute -top-2 -right-2 bg-amber-700 text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full font-bold">0</span>
+                
                 </div>
             </div>
         </nav>
@@ -169,9 +167,7 @@
                         <span class="text-amber-900 font-bold">₹1,250</span>
                     </div>
                     <p class="text-sm text-stone-500 mb-6 leading-relaxed">Layers of moist Belgian chocolate sponge with silky dark ganache.</p>
-                    <button onclick="addToCart('Premium Truffle Bliss')" class="w-full py-4 bg-stone-900 text-white text-xs uppercase tracking-[0.2em] font-bold hover:bg-amber-800 transition-colors flex items-center justify-center gap-3">
-                        <i data-lucide="shopping-bag" class="w-4 h-4"></i> Add to Cart
-                    </button>
+                    
                 </div>
 
                 <!-- Product 2 -->
@@ -185,9 +181,7 @@
                         <span class="text-amber-900 font-bold">₹540</span>
                     </div>
                     <p class="text-sm text-stone-500 mb-6 leading-relaxed">Fluffy cocoa-infused red velvet topped with cream cheese frosting.</p>
-                    <button onclick="addToCart('Red Velvet Cupcakes')" class="w-full py-4 bg-stone-900 text-white text-xs uppercase tracking-[0.2em] font-bold hover:bg-amber-800 transition-colors flex items-center justify-center gap-3">
-                        <i data-lucide="shopping-bag" class="w-4 h-4"></i> Add to Cart
-                    </button>
+                    
                 </div>
 
                 <!-- Product 3 -->
@@ -200,9 +194,7 @@
                         <span class="text-amber-900 font-bold">₹180</span>
                     </div>
                     <p class="text-sm text-stone-500 mb-6 leading-relaxed">Light sponge layered with organic blueberry compote and mascarpone.</p>
-                    <button onclick="addToCart('Blueberry Pastry')" class="w-full py-4 bg-stone-900 text-white text-xs uppercase tracking-[0.2em] font-bold hover:bg-amber-800 transition-colors flex items-center justify-center gap-3">
-                        <i data-lucide="shopping-bag" class="w-4 h-4"></i> Add to Cart
-                    </button>
+                    
                 </div>
             </div>
         </div>
@@ -303,28 +295,7 @@
     <script>
         lucide.createIcons();
 
-        let cartCount = 0;
-        const cartBadge = document.getElementById('cart-count');
-
-        function addToCart(item) {
-            cartCount++;
-            cartBadge.innerText = cartCount;
-            
-            // Notification toast
-            const toast = document.createElement('div');
-            toast.className = 'fixed bottom-10 right-10 bg-stone-900 text-white px-6 py-4 rounded-lg shadow-2xl z-[100] border border-amber-800 animate-bounce';
-            toast.innerHTML = `<p class="text-sm font-bold serif italic">Added ${item} to your bag!</p>`;
-            document.body.appendChild(toast);
-            
-            setTimeout(() => {
-                toast.remove();
-            }, 3000);
-        }
-
-        function toggleCart() {
-            alert(`You have ${cartCount} items in your bag. Proceeding to checkout for delivery to Saguna More area?`);
-        }
-
+        
         // Navbar Scroll Styling
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
